@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FOOD HUB - Cart</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand fs-3 ms-4" href="index.html">Dhosa Hub</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link active" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="cart.html">Cart</a>
+      </li>
+      <li class="nav-item me-4">
+        <a class="nav-link active" href="login.html">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section>
+  <div class="container mt-5">
+    <h2>Shopping Cart</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="cart-item row" data-price="199">
+                <div class="col-md-3">
+                    <img src="Masala-Dosa.jpg" class="img-fluid text" alt="Product 1">
+                </div>
+                <div class="col-md-6">
+                    <h5>Masala Dosa <span class="badge badge-warning"> 4.5 ★</span></h5>
+                    <p>A crispy dosa filled with a spicy mashed potato filling.</p>
+                    <h6 class="text-primary">₹199</h6>
+                    <input type="number" class="form-control w-25 item-quantity" value="1" min="1">
+                    <p>Estimated Delivery: <strong>June 15, 2024</strong></p>
+                </div>
+                <div class="col-md-3 text-right">
+                    <h5 class="item-total">₹199</h5>
+                    <span class="wishlist-btn" onclick="toggleWishlist(this)">♡</span>
+                </div>
+            </div>
+            <div class="cart-item row" data-price="199">
+                <div class="col-md-3">
+                    <img src="Rava Dosa.jpg" class="img-fluid" alt="Product 2">
+                </div>
+                <div class="col-md-6">
+                    <h5>Rava Dosa  <span class="badge badge-warning">4.0 ★</span></h5>
+                    <p>A semolina-based dosa that is crispy and flavorful Dosa.</p>
+                    <h6 class="text-primary">₹199</h6>
+                    <input type="number" class="form-control w-25 item-quantity" value="2" min="1">
+                    <p>Estimated Delivery: <strong>June 17, 2024</strong></p>
+                </div>
+                <div class="col-md-3 text-right">
+                    <h5 class="item-total">₹199</h5>
+                    <span class="wishlist-btn" onclick="toggleWishlist(this)">♡</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="cart-summary">
+                <h5>Cart Summary</h5>
+                <div class="promo-code">
+                    <input type="text" class="form-control" id="promo-code" placeholder="Promo code">
+                    <button class="btn btn-primary" onclick="applyPromoCode()">Apply</button>
+                </div>
+                <ul class="list-unstyled">
+                    <li class="d-flex justify-content-between"><span>Subtotal</span><span id="subtotal">₹0.00</span></li>
+                    <li class="d-flex justify-content-between"><span>Discount</span><span id="discount">₹0.00</span></li>
+                    <li class="d-flex justify-content-between"><span>Tax</span><span id="tax">₹0.00</span></li>
+                    <li class="d-flex justify-content-between"><strong>Total</strong><strong id="total">₹0.00</strong></li>
+                </ul>
+                <a href="checkout.html" class="btn btn-primary btn-block" onclick="storeCartSummary()">Checkout</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+</section>
+<!-- Related Products -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Related Products</h2>
+    <div class="row">
+      <div class="col-md-6 col-lg-3 col-sm-6">
+        <div class="card mb-4 shadow-sm">
+          <img src="Set Dosa.jpg" class="card-img-top img-fluid" alt="Set Dosa">
+          <div class="card-body">
+            <h5 class="card-title">Set Dosa</h5>
+            <p class="card-text">Soft, fluffy Set dosas usually served in a set of three. Accompanied by sambar and
+              chutney.
+            </p>
+            <p class="price text-primary h5 mb-3">₹199</p>
+            <a href="cart.html">
+              <button class="btn btn-primary btn-block">Add to Cart</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 col-sm-6">
+        <div class="card mb-4 shadow-sm">
+          <img src="Onion Dosa.jpg" class="card-img-top img-fluid" alt="Onion Dosa">
+          <div class="card-body">
+            <h5 class="card-title">Onion Dosa</h5>
+            <p class="card-text">A crispy dosa topped with finely chopped onion Dosa. Served with sambar and chutney.
+            </p>
+            <p class="price text-primary h5 mb-3">₹199</p>
+            <a href="cart.html">
+              <button class="btn btn-primary btn-block">Add to Cart</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 col-sm-6">
+        <div class="card mb-4 shadow-sm">
+          <img src="Cheese Dosa.jpg" class="card-img-top img-fluid" alt="Cheese Dosa">
+          <div class="card-body">
+            <h5 class="card-title">Cheese Dosa</h5>
+            <p class="card-text">A modern twist to the traditional dosa, topped with melted cheese. Served with sambar
+              and chutney.</p>
+            <p class="price text-primary h5 mb-3">₹199</p>
+            <a href="cart.html">
+              <button class="btn btn-primary btn-block">Add to Cart</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 col-sm-6 mb-5 pb-3">
+        <div class="card mb-4 shadow-sm">
+          <img src="gini dhosa.jpg" class="card-img-top img-fluid" alt="Cheese Dosa">
+          <div class="card-body">
+            <h5 class="card-title">jini Dosa</h5>
+            <p class="card-text">A popular street food from Mumbai, Jini Dosa is a fusion of dosa and Chinese flavors.</p>
+            <p class="price text-primary h5 mb-3">₹199</p>
+            <a href="cart.html">
+              <button class="btn btn-primary btn-block">Add to Cart</button></a>
+          </div>
+        </div>
+      </div>
+                </div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="container-fluid mt-5 p-4 bg-primary text-white text-center">
+  <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+</footer>
+
+<nav class="mobile-footer-nav d-lg-none mt-5">
+  <div class="container-fluid">
+    <div class="navbar-collapse">
+      <ul class="navbar-nav d-flex flex-row w-100 justify-content-around">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">
+            <i class="bi bi-house"></i>
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="cart.html">
+            <i class="bi bi-cart"></i>
+            Cart
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="login.html">
+            <i class="bi bi-person"></i>
+            Login
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const promoCodes = {
+      'SAVE10': 0.1,  // 10% discount
+      'SAVE20': 0.2   // 20% discount
+  };
+
+  function updateCart() {
+      let subtotal = 0;
+      document.querySelectorAll('.cart-item').forEach(item => {
+          const price = parseFloat(item.getAttribute('data-price'));
+          const quantity = parseInt(item.querySelector('.item-quantity').value);
+          const itemTotal = price * quantity;
+          item.querySelector('.item-total').innerText = `₹${itemTotal.toFixed(2)}`;
+          subtotal += itemTotal;
+      });
+
+      document.getElementById('subtotal').innerText = `₹${subtotal.toFixed(2)}`;
+      calculateTotal();
+
+      // Store values in localStorage
+      storeCartSummary();
+  }
+
+  function calculateTotal() {
+      const subtotal = parseFloat(document.getElementById('subtotal').innerText.replace('₹', ''));
+      const discount = parseFloat(document.getElementById('discount').innerText.replace('₹', ''));
+      const tax = subtotal * 0.1;  // Assuming a 10% tax rate
+      const total = subtotal - discount + tax;
+
+      document.getElementById('tax').innerText = `₹${tax.toFixed(2)}`;
+      document.getElementById('total').innerText = `₹${total.toFixed(2)}`;
+
+      // Store values in localStorage
+      storeCartSummary();
+  }
+
+  function applyPromoCode() {
+      const promoCode = document.getElementById('promo-code').value.trim().toUpperCase();
+      const discountRate = promoCodes[promoCode] || 0;
+      const subtotal = parseFloat(document.getElementById('subtotal').innerText.replace('₹', ''));
+      const discount = subtotal * discountRate;
+
+      document.getElementById('discount').innerText = `₹${discount.toFixed(2)}`;
+      calculateTotal();
+  }
+
+  function storeCartSummary() {
+      const subtotal = parseFloat(document.getElementById('subtotal').innerText.replace('₹', ''));
+      const discount = parseFloat(document.getElementById('discount').innerText.replace('₹', ''));
+      const tax = parseFloat(document.getElementById('tax').innerText.replace('₹', ''));
+      const total = parseFloat(document.getElementById('total').innerText.replace('₹', ''));
+
+      localStorage.setItem('subtotal', subtotal.toFixed(2));
+      localStorage.setItem('discount', discount.toFixed(2));
+      localStorage.setItem('tax', tax.toFixed(2));
+      localStorage.setItem('total', total.toFixed(2));
+  }
+
+  function toggleWishlist(element) {
+      element.classList.toggle('added');
+      if (element.classList.contains('added')) {
+          element.innerText = '✓';
+      } else {
+          element.innerText = '♡';
+      }
+  }
+
+  document.querySelectorAll('.item-quantity').forEach(input => {
+      input.addEventListener('change', updateCart);
+  });
+
+  // Initial calculation
+  updateCart();
+</script>
+
+</body>
+</html>
