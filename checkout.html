@@ -48,34 +48,24 @@
       <form style="background-color: white; padding: 30px; border-radius: 30px;">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+          <input type="text" class="form-control" id="name" placeholder="Meet" required>
         </div>
         <div class="form-group">
           <label for="address">Address</label>
-          <input type="text" class="form-control" id="address" placeholder="Enter your address" required>
+          <input type="text" class="form-control" id="address" placeholder="Sectior 12b" required>
         </div>
         <div class="form-group">
           <label for="city">City</label>
-          <input type="text" class="form-control" id="city" placeholder="Enter your city" required>
+          <input type="text" class="form-control" id="city" placeholder="Gandhinagar" required>
         </div>
         <div class="form-group">
-          <label for="postal-code">Postal Code</label>
-          <input type="text" class="form-control" id="postal-code" placeholder="Enter your postal code" required>
+          <label for="postal-code">Pin Code</label>
+          <input type="text" class="form-control" id="postal-code" placeholder="382016" required>
         </div>
         <div class="form-group">
-          <label for="card-number">Card Number</label>
-          <input type="text" class="form-control" id="card-number" placeholder="Enter your card number" required>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="expiration-date">Expiration Date</label>
-            <input type="text" class="form-control" id="expiration-date" placeholder="MM/YY" required>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="cvv">CVV</label>
-            <input type="text" class="form-control" id="cvv" placeholder="CVV" required>
-          </div>
-        </div>
+          <label for="cod">Payment Method</label>
+          <input type="text" class="form-control" id="cod" value="Cash on Delivery" readonly>
+      </div>
       </form>
     </div>
     <div class="col-md-4 mb-5 pb-5">
@@ -86,7 +76,7 @@
           <li class="d-flex justify-content-between"><span>Discount</span><span id="discount">₹0.00</span></li>
           <li class="d-flex justify-content-between"><span>Tax</span><span id="tax">₹5.00</span></li><br>
           <li class="d-flex justify-content-between"><strong>Total</strong><strong id="total">₹55.00</strong></li><hr>
-          <a href="payment.html" type="submit" class="btn btn-primary btn-block">Payment</a>
+          <a href="confirm.html" type="submit" class="btn btn-primary btn-block">Submit</a>
 
         </ul>
       </div>
