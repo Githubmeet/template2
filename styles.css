@@ -151,7 +151,6 @@ body {
   /* padding: -10px 0; */
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
   z-index: 999;
-
 }
 
 .mobile-footer-nav .nav-item {
@@ -167,12 +166,12 @@ body {
 }
 
 .mobile-footer-nav .nav-item .nav-link i {
-  font-size: 22px;
-  margin-bottom: 8px;
+  font-size: 20px;
+  margin-bottom: 1px;
 }
 
 .mobile-footer-nav .nav-item .nav-link span {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 
